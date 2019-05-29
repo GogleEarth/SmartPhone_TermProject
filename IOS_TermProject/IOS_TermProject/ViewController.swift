@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var pickerDataSource = ["놀이시설", "어린이집", "지역 아동센터", "아동양육시설"]
     var myurl = "http://apis.data.go.kr/B551182/hospInfoService/getHospBasisList?pageNo=1&numOfRows=10&serviceKey=sea100UMmw23Xycs33F1EQnumONR%2F9ElxBLzkilU9Yr1oT4TrCot8Y2p0jyuJP72x9rG9D8CN5yuEs6AS2sAiw%3D%3D&sidoCd=110000&sgguCd="
-    var sgguCd: String = "110023"
+    var titlename: String = "놀이시설"
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
@@ -37,19 +37,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if row == 0
         {
-            sgguCd = "110023"
+            titlename = "놀이시설"
         }
         else if row == 1
         {
-            sgguCd = "110005"
+            titlename = "어린이집"
         }
         else if row == 2
         {
-            sgguCd = "110007"
+            titlename = "지역 아동센터"
         }
         else
         {
-            sgguCd = "110016"
+            titlename = "아동양육시설"
         }
     }
     
@@ -62,11 +62,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "segueToTableView"
+        if segue.identifier == "segueToSearchView"
         {
             if let navController = segue.destination as? UINavigationController
             {
-                
+                if let searchViewController = navController.topViewController as? SearchViewController
+                {
+                    
+                }
             }
         }
     }
