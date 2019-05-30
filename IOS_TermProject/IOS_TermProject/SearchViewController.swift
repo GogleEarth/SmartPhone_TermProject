@@ -30,12 +30,10 @@ class SearchViewController: UIViewController {
             {
                 if let playinfoTableViewController = navController as? PlayInfoTableViewController
                 {
-                    print(SearchField.text as Any)
                     playinfoTableViewController.cityname = SearchField.text
                     let sigunname = SearchField.text!
                     let sigunname_utf8 = sigunname.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
                     playinfoTableViewController.url = myurl + sigunname_utf8
-                    print(playinfoTableViewController.url)
                 }
             }
         }
