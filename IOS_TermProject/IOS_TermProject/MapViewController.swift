@@ -10,31 +10,22 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-    
     @IBOutlet weak var MapView: MKMapView!
    
-    var posts = NSMutableArray()
+    var PLAY_FACLT_NM : String?
+    var REFINE_LOTNO_ADDR : String?
     
-    let regionRadius: CLLocationDistance = 5000
+    let regionRadius: CLLocationDistance = 500
     
     var playfaclts : [PlayFaclt] = []
     
-    var xpos : Float = 0.0
-    var ypos : Float = 0.0
+    var xpos : Double = 0.0
+    var ypos : Double = 0.0
     
     func loadInitialData()
     {
-        for post in posts
-        {
-            let yadmNm = (post as AnyObject).value(forKey: "yadmNm") as! NSString as String
-            let addr = (post as AnyObject).value(forKey: "addr") as! NSString as String
-            let XPos = (post as AnyObject).value(forKey: "XPos") as! NSString as String
-            let YPos = (post as AnyObject).value(forKey: "YPos") as! NSString as String
-            let lat = (YPos as NSString).doubleValue
-            let lon = (XPos as NSString).doubleValue
-            let playfaclt = PlayFaclt(title: yadmNm, locationName: addr, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon))
-            playfaclts.append(playfaclt)
-        }
+        let playfaclt = PlayFaclt(title: PLAY_FACLT_NM!, locationName: REFINE_LOTNO_ADDR!, coordinate: CLLocationCoordinate2D(latitude: ypos, longitude: xpos))
+        playfaclts.append(playfaclt)
     }
     
     func centerMapOnLocation(location: CLLocation)
@@ -46,12 +37,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let initialLocation = CLLocation(latitude: CLLocationDegrees(ypos), longitude: CLLocationDegrees(xpos))
+        let initialLocation = CLLocation(latitude: ypos, longitude: xpos)
         centerMapOnLocation(location: initialLocation)
         MapView.delegate = self
         loadInitialData()
         MapView.addAnnotations(playfaclts)
-        // Do any additional setup after loading the view.
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)

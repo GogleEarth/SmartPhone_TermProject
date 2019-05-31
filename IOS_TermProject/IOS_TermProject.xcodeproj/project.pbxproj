@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A16D7FE4229ECA630019575D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D7FE3229ECA630019575D /* SearchViewController.swift */; };
+		A16D7FE4229ECA630019575D /* PlayFacltSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D7FE3229ECA630019575D /* PlayFacltSearchViewController.swift */; };
+		A1736A1222A113A800F6382D /* ChildrenHouseSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1736A1122A113A800F6382D /* ChildrenHouseSearchViewController.swift */; };
+		A1736A1422A1149900F6382D /* NursingFacltSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1736A1322A1149900F6382D /* NursingFacltSearchViewController.swift */; };
+		A1736A1622A114BC00F6382D /* LocalChidrenCenterSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1736A1522A114BC00F6382D /* LocalChidrenCenterSearchViewController.swift */; };
+		A1736A1C22A1172A00F6382D /* HouseInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1736A1B22A1172A00F6382D /* HouseInfoTableViewController.swift */; };
+		A1736A1E22A1174D00F6382D /* HouseDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1736A1D22A1174D00F6382D /* HouseDetailTableViewController.swift */; };
 		A196348E229FC138000F8F31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196348D229FC138000F8F31 /* MapViewController.swift */; };
 		A1963496229FC3F9000F8F31 /* PlayFaclt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1963495229FC3F9000F8F31 /* PlayFaclt.swift */; };
 		A1A73CBE229F9F620091AF51 /* PlayInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A73CBD229F9F620091AF51 /* PlayInfoTableViewController.swift */; };
@@ -20,7 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A16D7FE3229ECA630019575D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A16D7FE3229ECA630019575D /* PlayFacltSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayFacltSearchViewController.swift; sourceTree = "<group>"; };
+		A1736A1122A113A800F6382D /* ChildrenHouseSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenHouseSearchViewController.swift; sourceTree = "<group>"; };
+		A1736A1322A1149900F6382D /* NursingFacltSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursingFacltSearchViewController.swift; sourceTree = "<group>"; };
+		A1736A1522A114BC00F6382D /* LocalChidrenCenterSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalChidrenCenterSearchViewController.swift; sourceTree = "<group>"; };
+		A1736A1B22A1172A00F6382D /* HouseInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseInfoTableViewController.swift; sourceTree = "<group>"; };
+		A1736A1D22A1174D00F6382D /* HouseDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailTableViewController.swift; sourceTree = "<group>"; };
 		A196348D229FC138000F8F31 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A1963495229FC3F9000F8F31 /* PlayFaclt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayFaclt.swift; sourceTree = "<group>"; };
 		A1A73CBD229F9F620091AF51 /* PlayInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +55,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1736A1722A1157E00F6382D /* PlayFaclt */ = {
+			isa = PBXGroup;
+			children = (
+				A16D7FE3229ECA630019575D /* PlayFacltSearchViewController.swift */,
+				A1A73CBD229F9F620091AF51 /* PlayInfoTableViewController.swift */,
+				A1A73CBF229F9F930091AF51 /* PlayDetailTableViewController.swift */,
+			);
+			path = PlayFaclt;
+			sourceTree = "<group>";
+		};
+		A1736A1822A1159900F6382D /* LocalCenter */ = {
+			isa = PBXGroup;
+			children = (
+				A1736A1522A114BC00F6382D /* LocalChidrenCenterSearchViewController.swift */,
+			);
+			path = LocalCenter;
+			sourceTree = "<group>";
+		};
+		A1736A1922A115A400F6382D /* NursingFaclt */ = {
+			isa = PBXGroup;
+			children = (
+				A1736A1322A1149900F6382D /* NursingFacltSearchViewController.swift */,
+			);
+			path = NursingFaclt;
+			sourceTree = "<group>";
+		};
+		A1736A1A22A115AC00F6382D /* ChildrenHouse */ = {
+			isa = PBXGroup;
+			children = (
+				A1736A1122A113A800F6382D /* ChildrenHouseSearchViewController.swift */,
+				A1736A1B22A1172A00F6382D /* HouseInfoTableViewController.swift */,
+				A1736A1D22A1174D00F6382D /* HouseDetailTableViewController.swift */,
+			);
+			path = ChildrenHouse;
+			sourceTree = "<group>";
+		};
 		A1AE4CFF2292780800DDBAE6 = {
 			isa = PBXGroup;
 			children = (
@@ -64,15 +110,16 @@
 		A1AE4D0A2292780800DDBAE6 /* IOS_TermProject */ = {
 			isa = PBXGroup;
 			children = (
+				A1736A1A22A115AC00F6382D /* ChildrenHouse */,
+				A1736A1922A115A400F6382D /* NursingFaclt */,
+				A1736A1822A1159900F6382D /* LocalCenter */,
+				A1736A1722A1157E00F6382D /* PlayFaclt */,
 				A1AE4D0B2292780800DDBAE6 /* AppDelegate.swift */,
 				A1AE4D0D2292780800DDBAE6 /* ViewController.swift */,
 				A1AE4D0F2292780800DDBAE6 /* Main.storyboard */,
 				A1AE4D122292780900DDBAE6 /* Assets.xcassets */,
 				A1AE4D142292780900DDBAE6 /* LaunchScreen.storyboard */,
 				A1AE4D172292780900DDBAE6 /* Info.plist */,
-				A16D7FE3229ECA630019575D /* SearchViewController.swift */,
-				A1A73CBD229F9F620091AF51 /* PlayInfoTableViewController.swift */,
-				A1A73CBF229F9F930091AF51 /* PlayDetailTableViewController.swift */,
 				A196348D229FC138000F8F31 /* MapViewController.swift */,
 				A1963495229FC3F9000F8F31 /* PlayFaclt.swift */,
 			);
@@ -150,12 +197,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A16D7FE4229ECA630019575D /* SearchViewController.swift in Sources */,
+				A1736A1C22A1172A00F6382D /* HouseInfoTableViewController.swift in Sources */,
+				A16D7FE4229ECA630019575D /* PlayFacltSearchViewController.swift in Sources */,
 				A196348E229FC138000F8F31 /* MapViewController.swift in Sources */,
 				A1A73CC0229F9F930091AF51 /* PlayDetailTableViewController.swift in Sources */,
 				A1AE4D0E2292780800DDBAE6 /* ViewController.swift in Sources */,
+				A1736A1E22A1174D00F6382D /* HouseDetailTableViewController.swift in Sources */,
+				A1736A1222A113A800F6382D /* ChildrenHouseSearchViewController.swift in Sources */,
+				A1736A1622A114BC00F6382D /* LocalChidrenCenterSearchViewController.swift in Sources */,
 				A1AE4D0C2292780800DDBAE6 /* AppDelegate.swift in Sources */,
 				A1A73CBE229F9F620091AF51 /* PlayInfoTableViewController.swift in Sources */,
+				A1736A1422A1149900F6382D /* NursingFacltSearchViewController.swift in Sources */,
 				A1963496229FC3F9000F8F31 /* PlayFaclt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
