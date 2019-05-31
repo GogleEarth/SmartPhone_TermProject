@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGW-ch-uXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7143" y="-36"/>
+            <point key="canvasLocation" x="7500" y="1259"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kVV-Bp-uYt">
@@ -375,7 +375,11 @@
                         <viewLayoutGuide key="safeArea" id="yBX-Lt-RLX"/>
                     </view>
                     <navigationItem key="navigationItem" title="경기도 양육시설" id="nf4-eI-br8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="b7Z-Vp-qoS"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="b7Z-Vp-qoS">
+                            <connections>
+                                <segue destination="rjb-sa-c6a" kind="show" identifier="segueToNursingInfoTableView" id="Xg5-cp-j9S"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="SearchField" destination="tVq-6a-Rwr" id="CII-UA-qlb"/>
@@ -408,7 +412,7 @@
         <!--지역아동센터 검색-->
         <scene sceneID="3bL-M5-Vy9">
             <objects>
-                <viewController title="지역아동센터 검색" id="G3h-Ro-Qcn" customClass="LocalChidrenCenterSearchViewController" customModule="IOS_TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="지역아동센터 검색" id="G3h-Ro-Qcn" customClass="LocalCenterSearchViewController" customModule="IOS_TermProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xm2-td-iW3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,7 +458,11 @@
                         <viewLayoutGuide key="safeArea" id="CJ1-s9-fac"/>
                     </view>
                     <navigationItem key="navigationItem" title="경기도 지역아동센터" id="0uY-7b-O8K">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="2AR-VN-TBO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="2AR-VN-TBO">
+                            <connections>
+                                <segue destination="Y9C-pC-Try" kind="show" identifier="segueToLocalInfoTableView" id="0Ac-hv-pnC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="SearchField" destination="X8b-DV-Bbb" id="MST-fE-gwS"/>
@@ -517,7 +525,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="34H-gM-pva" kind="show" identifier="segueToDetailHouseInfo" trigger="accessoryAction" id="gf7-ib-cfp"/>
+                                    <segue destination="34H-gM-pva" kind="show" identifier="segueToDetailHouseInfo" id="fOR-8b-9XB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -575,12 +583,223 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="어린이집 상세정보" id="wRD-Bc-AGZ">
-                        <barButtonItem key="rightBarButtonItem" title="지도보기" id="wfd-9h-VSk"/>
+                        <barButtonItem key="rightBarButtonItem" title="지도보기" id="wfd-9h-VSk">
+                            <connections>
+                                <segue destination="8Ix-lq-HUM" kind="show" identifier="segueToMapView" id="DGE-m2-LmE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SD-7o-b3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6113" y="777"/>
         </scene>
+        <!--양육시설 목록-->
+        <scene sceneID="0yG-Df-RDf">
+            <objects>
+                <tableViewController title="양육시설 목록" id="rjb-sa-c6a" customClass="NursingFacltTableViewController" customModule="IOS_TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DNH-vi-Bl2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="pJt-8j-gt3" detailTextLabel="LYc-9N-gNo" style="IBUITableViewCellStyleSubtitle" id="cNA-tl-I7W">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cNA-tl-I7W" id="fKw-rL-qxF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pJt-8j-gt3">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LYc-9N-gNo">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="1qE-cj-slt" kind="show" identifier="segueToDetailNursingInfo" id="ZiB-jM-A7d"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rjb-sa-c6a" id="UVo-9V-W7l"/>
+                            <outlet property="delegate" destination="rjb-sa-c6a" id="6yO-S8-JYt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="어린이집" id="ZLi-8r-3zw"/>
+                    <connections>
+                        <outlet property="PlayInfoTableView" destination="DNH-vi-Bl2" id="oFc-QN-O48"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhb-rx-1H6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5081" y="1646"/>
+        </scene>
+        <!--어린이집 상세정보-->
+        <scene sceneID="GYJ-KW-Zg7">
+            <objects>
+                <tableViewController title="어린이집 상세정보" id="1qE-cj-slt" customClass="NursingFacltDetailTableViewController" customModule="IOS_TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ie0-4G-Bbl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Oiw-ez-Hlf" detailTextLabel="AH5-9q-9yR" style="IBUITableViewCellStyleSubtitle" id="6Dk-6H-TgV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Dk-6H-TgV" id="w97-Sm-F7v">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oiw-ez-Hlf">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AH5-9q-9yR">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1qE-cj-slt" id="Z6S-r8-TrQ"/>
+                            <outlet property="delegate" destination="1qE-cj-slt" id="QhY-ep-cwi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="어린이집 상세정보" id="Kaq-Du-SMh">
+                        <barButtonItem key="rightBarButtonItem" title="지도보기" id="zJX-mO-8xD">
+                            <connections>
+                                <segue destination="8Ix-lq-HUM" kind="show" identifier="segueToMapView" id="Xzx-Pl-HWx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Min-Li-F9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6113" y="1646"/>
+        </scene>
+        <!--지역아동센터 목록-->
+        <scene sceneID="nYl-fo-exZ">
+            <objects>
+                <tableViewController title="지역아동센터 목록" id="Y9C-pC-Try" customClass="LocalCenterTableViewController" customModule="IOS_TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mLo-Gn-dIk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="S5c-82-4t8" detailTextLabel="8ip-nd-huF" style="IBUITableViewCellStyleSubtitle" id="hBp-DQ-1qr">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hBp-DQ-1qr" id="89i-fC-mig">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S5c-82-4t8">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8ip-nd-huF">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="oOR-bW-zaL" kind="show" identifier="segueToLocalDetailInfoTableView" id="Mwu-rt-HPy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Y9C-pC-Try" id="PlT-U2-iY3"/>
+                            <outlet property="delegate" destination="Y9C-pC-Try" id="8yp-of-3D5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="지역아동센터" id="u0N-6b-S1s"/>
+                    <connections>
+                        <outlet property="PlayInfoTableView" destination="mLo-Gn-dIk" id="BZR-d9-6eO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ofk-VT-5cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5081" y="2560"/>
+        </scene>
+        <!--지역아동센터 상세정보-->
+        <scene sceneID="tJG-MV-M83">
+            <objects>
+                <tableViewController title="지역아동센터 상세정보" id="oOR-bW-zaL" customClass="LocalCenterDetailTableViewController" customModule="IOS_TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lXM-AJ-MJ4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="g8O-al-oEI" detailTextLabel="mb2-lA-CiB" style="IBUITableViewCellStyleSubtitle" id="ApI-01-uSt">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ApI-01-uSt" id="Pcu-kc-Smf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g8O-al-oEI">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mb2-lA-CiB">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oOR-bW-zaL" id="Emi-RF-8Q3"/>
+                            <outlet property="delegate" destination="oOR-bW-zaL" id="Wno-Yg-q0q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="어린이집 상세정보" id="sWF-Ei-V4L">
+                        <barButtonItem key="rightBarButtonItem" title="지도보기" id="1gt-tV-GGF">
+                            <connections>
+                                <segue destination="8Ix-lq-HUM" kind="show" identifier="segueToMapView" id="xPn-FO-Vxy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jt9-lW-ipU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6113" y="2560"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xPn-FO-Vxy"/>
+    </inferredMetricsTieBreakers>
 </document>

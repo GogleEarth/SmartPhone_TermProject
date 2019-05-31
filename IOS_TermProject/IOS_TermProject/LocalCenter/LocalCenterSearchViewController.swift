@@ -8,14 +8,14 @@
 
 import UIKit
 
-class LocalChidrenCenterSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class LocalCenterSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var lastSearchTableView: UITableView!
     @IBOutlet weak var SearchField: UITextField!
     
     var SearchLast : [String] = []
     
-    var myurl = "https://openapi.gg.go.kr/ChildPlayFacility?KEY=edca732aac4047cabe0b0508aba9616d&pIndex=1&pSize=100&SIGUN_NM="
+    var myurl = "https://openapi.gg.go.kr/ChildWelfareRegionChildCener?KEY=edca732aac4047cabe0b0508aba9616d&pIndex=1&pSize=100&SIGUN_NM="
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,17 +32,17 @@ class LocalChidrenCenterSearchViewController: UIViewController, UITableViewDataS
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "segueToPlayInfoTableView"
+        if segue.identifier == "segueToLocalInfoTableView"
         {
             if let navController = segue.destination as? UITableViewController
             {
-                if let playinfoTableViewController = navController as? PlayInfoTableViewController
+                if let localCenterTableViewController = navController as? LocalCenterTableViewController
                 {
-                    playinfoTableViewController.cityname = SearchField.text
+                    localCenterTableViewController.cityname = SearchField.text
                     let sigunname = SearchField.text!
                     SearchLast.append(sigunname)
                     let sigunname_utf8 = sigunname.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-                    playinfoTableViewController.url = myurl + sigunname_utf8
+                    localCenterTableViewController.url = myurl + sigunname_utf8
                 }
             }
         }

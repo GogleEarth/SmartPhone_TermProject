@@ -15,7 +15,7 @@ class ChildrenHouseSearchViewController: UIViewController, UITableViewDataSource
     
     var SearchLast : [String] = []
     
-    var myurl = "https://openapi.gg.go.kr/ChildPlayFacility?KEY=edca732aac4047cabe0b0508aba9616d&pIndex=1&pSize=100&SIGUN_NM="
+    var myurl = "https://openapi.gg.go.kr/ChildHouse?KEY=edca732aac4047cabe0b0508aba9616d&pIndex=1&pSize=100&SIGUN_NM="
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 //
-//  HouseInfoTableViewController.swift
+//  LocalCenterTableViewController.swift
 //  IOS_TermProject
 //
 //  Created by  kpugame on 31/05/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
+class LocalCenterTableViewController: UITableViewController, XMLParserDelegate {
     var cityname : String?
     @IBOutlet var PlayInfoTableView: UITableView!
     
@@ -18,13 +18,12 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
     var elements = NSMutableDictionary()
     var element = NSString()
     
-    var KIDGARTN_NM = NSMutableString() //이름
+    var FACLT_NM = NSMutableString() //이름
     var REFINE_LOTNO_ADDR = NSMutableString() // 주소
-    var KIDGARTN_DIV_NM = NSMutableString() //유형
     var REFINE_WGS84_LOGT = NSMutableString() //xpos
     var REFINE_WGS84_LAT = NSMutableString() //ypos
-    var KIDGARTN_TELNO = NSMutableString() // 전화번호
-    var PSN_CAPA_CNT = NSMutableString() // 정원수
+    var WELFARE_FACLT_TELNO = NSMutableString() // 전화번호
+    var FACLT_PSN_CAPA = NSMutableString() // 정원수
     
     var hospitalname = ""
     var hospitalname_utf8 = ""
@@ -45,28 +44,26 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
         {
             elements = NSMutableDictionary()
             elements = [:]
-            KIDGARTN_NM = NSMutableString()
-            KIDGARTN_NM = ""
+            FACLT_NM = NSMutableString()
+            FACLT_NM = ""
             REFINE_LOTNO_ADDR = NSMutableString()
             REFINE_LOTNO_ADDR = ""
-            KIDGARTN_DIV_NM = NSMutableString()
-            KIDGARTN_DIV_NM = ""
+            WELFARE_FACLT_TELNO = NSMutableString()
+            WELFARE_FACLT_TELNO = ""
             REFINE_WGS84_LOGT = NSMutableString()
             REFINE_WGS84_LOGT = ""
             REFINE_WGS84_LAT = NSMutableString()
             REFINE_WGS84_LAT = ""
-            KIDGARTN_TELNO = NSMutableString()
-            KIDGARTN_TELNO = ""
-            PSN_CAPA_CNT = NSMutableString()
-            PSN_CAPA_CNT = ""
+            FACLT_PSN_CAPA = NSMutableString()
+            FACLT_PSN_CAPA = ""
         }
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String)
     {
-        if element.isEqual(to: "KIDGARTN_NM")
+        if element.isEqual(to: "FACLT_NM")
         {
-            KIDGARTN_NM.append(string)
+            FACLT_NM.append(string)
         }
         else if element.isEqual(to: "REFINE_LOTNO_ADDR")
         {
@@ -80,14 +77,11 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
         {
             REFINE_WGS84_LAT.append(string)
         }
-        else if element.isEqual(to: "KIDGARTN_DIV_NM"){
-            KIDGARTN_DIV_NM.append(string)
+        else if element.isEqual(to: "WELFARE_FACLT_TELNO"){
+            WELFARE_FACLT_TELNO.append(string)
         }
-        else if element.isEqual(to: "KIDGARTN_TELNO"){
-            KIDGARTN_TELNO.append(string)
-        }
-        else if element.isEqual(to: "PSN_CAPA_CNT"){
-            PSN_CAPA_CNT.append(string)
+        else if element.isEqual(to: "FACLT_PSN_CAPA"){
+            FACLT_PSN_CAPA.append(string)
         }
     }
     
@@ -95,9 +89,9 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
     {
         if (elementName as NSString).isEqual(to: "row")
         {
-            if !KIDGARTN_NM.isEqual(nil)
+            if !FACLT_NM.isEqual(nil)
             {
-                elements.setObject(KIDGARTN_NM, forKey: "KIDGARTN_NM" as NSCopying)
+                elements.setObject(FACLT_NM, forKey: "FACLT_NM" as NSCopying)
             }
             if !REFINE_LOTNO_ADDR.isEqual(nil)
             {
@@ -111,14 +105,11 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
             {
                 elements.setObject(REFINE_WGS84_LAT, forKey: "REFINE_WGS84_LAT" as NSCopying)
             }
-            if !KIDGARTN_DIV_NM.isEqual(nil){
-                elements.setObject(KIDGARTN_DIV_NM, forKey: "KIDGARTN_DIV_NM" as NSCopying)
+            if !FACLT_PSN_CAPA.isEqual(nil){
+                elements.setObject(FACLT_PSN_CAPA, forKey: "FACLT_PSN_CAPA" as NSCopying)
             }
-            if !KIDGARTN_TELNO.isEqual(nil){
-                elements.setObject(KIDGARTN_TELNO, forKey: "KIDGARTN_TELNO" as NSCopying)
-            }
-            if !PSN_CAPA_CNT.isEqual(nil){
-                elements.setObject(PSN_CAPA_CNT, forKey: "PSN_CAPA_CNT" as NSCopying)
+            if !WELFARE_FACLT_TELNO.isEqual(nil){
+                elements.setObject(WELFARE_FACLT_TELNO, forKey: "WELFARE_FACLT_TELNO" as NSCopying)
             }
             
             posts.add(elements)
@@ -133,7 +124,7 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "KIDGARTN_NM") as! NSString as String
+        cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "FACLT_NM") as! NSString as String
         cell.detailTextLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "REFINE_LOTNO_ADDR") as! NSString as String
         return cell
     }
@@ -149,20 +140,19 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToDetailHouseInfo"
+        if segue.identifier == "segueToLocalDetailInfoTableView"
         {
             if let cell = sender as? UITableViewCell
             {
                 let indexPath = tableView.indexPath(for: cell)
-                if let houseDetailTableViewController = segue.destination as? HouseDetailTableViewController
+                if let localCenterDetailTableViewController = segue.destination as? LocalCenterDetailTableViewController
                 {
-                    houseDetailTableViewController.KIDGARTN_NM = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "KIDGARTN_NM") as! NSMutableString as String
-                    houseDetailTableViewController.REFINE_LOTNO_ADDR = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "REFINE_LOTNO_ADDR") as! NSMutableString as String
-                    houseDetailTableViewController.KIDGARTN_DIV_NM = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "KIDGARTN_DIV_NM") as! NSMutableString as String
-                    houseDetailTableViewController.REFINE_WGS84_LOGT = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSMutableString as String
-                    houseDetailTableViewController.REFINE_WGS84_LAT = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSMutableString as String
-                    houseDetailTableViewController.KIDGARTN_TELNO = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "KIDGARTN_TELNO") as! NSMutableString as String
-                    houseDetailTableViewController.PSN_CAPA_CNT = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "PSN_CAPA_CNT") as! NSMutableString as String
+                    localCenterDetailTableViewController.FACLT_NM = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "FACLT_NM") as! NSMutableString as String
+                    localCenterDetailTableViewController.REFINE_LOTNO_ADDR = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "REFINE_LOTNO_ADDR") as! NSMutableString as String
+                    localCenterDetailTableViewController.REFINE_WGS84_LOGT = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSMutableString as String
+                    localCenterDetailTableViewController.REFINE_WGS84_LAT = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSMutableString as String
+                    localCenterDetailTableViewController.WELFARE_FACLT_TELNO = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "WELFARE_FACLT_TELNO") as! NSMutableString as String
+                    localCenterDetailTableViewController.FACLT_PSN_CAPA = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "FACLT_PSN_CAPA") as! NSMutableString as String
                 }
             }
         }

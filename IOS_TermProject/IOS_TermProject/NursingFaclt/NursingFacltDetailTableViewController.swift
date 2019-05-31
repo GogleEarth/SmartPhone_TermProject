@@ -1,5 +1,5 @@
 //
-//  HouseDetailTableViewController.swift
+//  NursingFacltDetailTableViewController.swift
 //  IOS_TermProject
 //
 //  Created by  kpugame on 31/05/2019.
@@ -8,30 +8,34 @@
 
 import UIKit
 
-class HouseDetailTableViewController: UITableViewController {
+class NursingFacltDetailTableViewController: UITableViewController {
     
     
-    var KIDGARTN_NM : String? //이름
+    var FACLT_NM : String? // 시설이름
     var REFINE_LOTNO_ADDR : String? // 주소
-    var KIDGARTN_DIV_NM : String? //유형
+    var FACLTCHEF_NM : String? //시설장명
+    var TELNO : String? // 전화번호
+    var ACEPTNC_CHILD_PSN_CAPA : String? // 수용아동정원
+    var ACEPTNC_CHILD_NOWPSN_CNT : String? // 수용아동현재원
+    var ENFLPSN_CNT : String? // 종사자수
     var REFINE_WGS84_LOGT : String? //xpos
     var REFINE_WGS84_LAT : String? //ypos
-    var KIDGARTN_TELNO : String? // 전화번호
-    var PSN_CAPA_CNT : String? // 정원수
     
-    let postsname : [String] = ["어린이집명", "주소", "어린이집유형구분", "정원수", "어린이집전화번호", "위도", "경도" ]
-    var posts : [String] = ["","","","","","",""]
+    let postsname : [String] = ["시설이름", "주소", "시설장명", "전화번호", "수용아동정원", "수용아동현재원", "종사자수", "위도", "경도"]
+    var posts : [String] = ["","","","","","","","",""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        posts[0] = KIDGARTN_NM!
+        posts[0] = FACLT_NM!
         posts[1] = REFINE_LOTNO_ADDR!
-        posts[2] = KIDGARTN_DIV_NM!
-        posts[3] = PSN_CAPA_CNT!
-        posts[4] = KIDGARTN_TELNO!
-        posts[5] = REFINE_WGS84_LAT!
-        posts[6] = REFINE_WGS84_LOGT!
+        posts[2] = FACLTCHEF_NM!
+        posts[3] = TELNO!
+        posts[4] = ACEPTNC_CHILD_PSN_CAPA!
+        posts[5] = ACEPTNC_CHILD_NOWPSN_CNT!
+        posts[6] = ENFLPSN_CNT!
+        posts[7] = REFINE_WGS84_LAT!
+        posts[8] = REFINE_WGS84_LOGT!
     }
     
     
@@ -58,7 +62,7 @@ class HouseDetailTableViewController: UITableViewController {
         {
             if let mapViewController = segue.destination as? MapViewController
             {
-                mapViewController.PLAY_FACLT_NM = KIDGARTN_NM!
+                mapViewController.PLAY_FACLT_NM = FACLT_NM!
                 mapViewController.REFINE_LOTNO_ADDR = REFINE_LOTNO_ADDR!
                 mapViewController.xpos = (REFINE_WGS84_LOGT as! NSMutableString as NSString).doubleValue
                 mapViewController.ypos = (REFINE_WGS84_LAT as! NSMutableString as NSString).doubleValue
