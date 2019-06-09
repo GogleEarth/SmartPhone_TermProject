@@ -14,12 +14,14 @@ class PlayFaclt: NSObject, MKAnnotation {
     let title: String?
     let locationName: String
     let coordinate: CLLocationCoordinate2D
+    var index_num : Int
     
     init(title: String, locationName: String, coordinate: CLLocationCoordinate2D)
     {
         self.title = title
         self.locationName = locationName
         self.coordinate = coordinate
+        self.index_num = 0
         
         super.init()
     }

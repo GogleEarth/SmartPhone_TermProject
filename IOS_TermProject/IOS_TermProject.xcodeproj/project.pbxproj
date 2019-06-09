@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A168B3BA22ACBB4D00340291 /* NursingFacltMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A168B3B922ACBB4D00340291 /* NursingFacltMapViewController.swift */; };
 		A16D7FE4229ECA630019575D /* PlayFacltSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D7FE3229ECA630019575D /* PlayFacltSearchViewController.swift */; };
 		A1711D7A22A15132001B1723 /* NursingFacltTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1711D7922A15132001B1723 /* NursingFacltTableViewController.swift */; };
 		A1711D7C22A159FA001B1723 /* NursingFacltDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1711D7B22A159FA001B1723 /* NursingFacltDetailTableViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A168B3B922ACBB4D00340291 /* NursingFacltMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursingFacltMapViewController.swift; sourceTree = "<group>"; };
 		A16D7FE3229ECA630019575D /* PlayFacltSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayFacltSearchViewController.swift; sourceTree = "<group>"; };
 		A1711D7922A15132001B1723 /* NursingFacltTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursingFacltTableViewController.swift; sourceTree = "<group>"; };
 		A1711D7B22A159FA001B1723 /* NursingFacltDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursingFacltDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				A1736A1322A1149900F6382D /* NursingFacltSearchViewController.swift */,
 				A1711D7922A15132001B1723 /* NursingFacltTableViewController.swift */,
 				A1711D7B22A159FA001B1723 /* NursingFacltDetailTableViewController.swift */,
+				A168B3B922ACBB4D00340291 /* NursingFacltMapViewController.swift */,
 			);
 			path = NursingFaclt;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				A1A73CC0229F9F930091AF51 /* PlayDetailTableViewController.swift in Sources */,
 				A1AE4D0E2292780800DDBAE6 /* ViewController.swift in Sources */,
 				A1736A1E22A1174D00F6382D /* HouseDetailTableViewController.swift in Sources */,
+				A168B3BA22ACBB4D00340291 /* NursingFacltMapViewController.swift in Sources */,
 				A1736A1222A113A800F6382D /* ChildrenHouseSearchViewController.swift in Sources */,
 				A1736A1622A114BC00F6382D /* LocalCenterSearchViewController.swift in Sources */,
 				A1711D7A22A15132001B1723 /* NursingFacltTableViewController.swift in Sources */,

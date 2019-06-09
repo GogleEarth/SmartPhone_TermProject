@@ -11,6 +11,7 @@ import UIKit
 class NursingFacltDetailTableViewController: UITableViewController {
     
     
+    @IBOutlet weak var back_button: UIButton!
     var FACLT_NM : String? // 시설이름
     var REFINE_LOTNO_ADDR : String? // 주소
     var FACLTCHEF_NM : String? //시설장명
@@ -68,6 +69,9 @@ class NursingFacltDetailTableViewController: UITableViewController {
                 mapViewController.ypos = (REFINE_WGS84_LAT as! NSMutableString as NSString).doubleValue
             }
         }
+    }
+    
+    @IBAction func back_button_action(_ sender: Any) {
     }
     
 }
