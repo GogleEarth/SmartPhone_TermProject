@@ -11,8 +11,12 @@ import UIKit
 class LocalCenterTableViewController: UITableViewController, XMLParserDelegate {
     var cityname : String?
     @IBOutlet var PlayInfoTableView: UITableView!
+    @IBOutlet var searchFooter: SearchFooter!
     
-    var url : String?
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredCandies = [Local]()
+    
+    var url : String = "https://openapi.gg.go.kr/ChildWelfareRegionChildCener?KEY=edca732aac4047cabe0b0508aba9616d&pIndex=1&pSize=1000"
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
@@ -25,13 +29,10 @@ class LocalCenterTableViewController: UITableViewController, XMLParserDelegate {
     var WELFARE_FACLT_TELNO = NSMutableString() // 전화번호
     var FACLT_PSN_CAPA = NSMutableString() // 정원수
     
-    var hospitalname = ""
-    var hospitalname_utf8 = ""
-    
     func beginParsing()
     {
         posts = []
-        parser = XMLParser(contentsOf:( URL(string:url!))!)!
+        parser = XMLParser(contentsOf:( URL(string:url))!)!
         parser.delegate = self
         parser.parse()
         PlayInfoTableView!.reloadData()
@@ -133,6 +134,12 @@ class LocalCenterTableViewController: UITableViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search LocalFaclt"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -156,5 +163,21 @@ class LocalCenterTableViewController: UITableViewController, XMLParserDelegate {
                 }
             }
         }
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        
+        
+        PlayInfoTableView.reloadData()
+    }
+}
+
+extension LocalCenterTableViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }

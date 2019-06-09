@@ -88,6 +88,7 @@ class NursingFacltMapViewController: UIViewController, MKMapViewDelegate, XMLPar
         selected_post = location.index_num
         print(selected_post)
         let uvc = self.storyboard?.instantiateViewController(withIdentifier : "NurseDetail")
+        
         if let nursingFacltDetailTableViewController = uvc as? NursingFacltDetailTableViewController
         {
             nursingFacltDetailTableViewController.FACLT_NM = (posts.object(at: selected_post) as AnyObject).value(forKey: "FACLT_NM") as! NSMutableString as String
@@ -100,6 +101,7 @@ class NursingFacltMapViewController: UIViewController, MKMapViewDelegate, XMLPar
             nursingFacltDetailTableViewController.ACEPTNC_CHILD_NOWPSN_CNT = (posts.object(at: selected_post) as AnyObject).value(forKey: "ACEPTNC_CHILD_NOWPSN_CNT") as! NSMutableString as String
             nursingFacltDetailTableViewController.ENFLPSN_CNT = (posts.object(at: selected_post) as AnyObject).value(forKey: "ENFLPSN_CNT") as! NSMutableString as String
         }
+        
         uvc?.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
         present(uvc!, animated: true, completion: nil)
     }

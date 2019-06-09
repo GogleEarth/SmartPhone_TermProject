@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A168B3BA22ACBB4D00340291 /* NursingFacltMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A168B3B922ACBB4D00340291 /* NursingFacltMapViewController.swift */; };
+		A168B3BC22ACDEA800340291 /* searchfooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A168B3BB22ACDEA800340291 /* searchfooter.swift */; };
+		A168B3BE22ACE29400340291 /* Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = A168B3BD22ACE29400340291 /* Local.swift */; };
+		A168B3C022ACEA6200340291 /* LocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A168B3BF22ACEA6200340291 /* LocalViewController.swift */; };
 		A16D7FE4229ECA630019575D /* PlayFacltSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D7FE3229ECA630019575D /* PlayFacltSearchViewController.swift */; };
 		A1711D7A22A15132001B1723 /* NursingFacltTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1711D7922A15132001B1723 /* NursingFacltTableViewController.swift */; };
 		A1711D7C22A159FA001B1723 /* NursingFacltDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1711D7B22A159FA001B1723 /* NursingFacltDetailTableViewController.swift */; };
@@ -31,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		A168B3B922ACBB4D00340291 /* NursingFacltMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursingFacltMapViewController.swift; sourceTree = "<group>"; };
+		A168B3BB22ACDEA800340291 /* searchfooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchfooter.swift; sourceTree = "<group>"; };
+		A168B3BD22ACE29400340291 /* Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
+		A168B3BF22ACEA6200340291 /* LocalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewController.swift; sourceTree = "<group>"; };
 		A16D7FE3229ECA630019575D /* PlayFacltSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayFacltSearchViewController.swift; sourceTree = "<group>"; };
 		A1711D7922A15132001B1723 /* NursingFacltTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursingFacltTableViewController.swift; sourceTree = "<group>"; };
 		A1711D7B22A159FA001B1723 /* NursingFacltDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NursingFacltDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 				A1736A1522A114BC00F6382D /* LocalCenterSearchViewController.swift */,
 				A1711D7D22A15EF7001B1723 /* LocalCenterTableViewController.swift */,
 				A1711D7F22A16095001B1723 /* LocalCenterDetailTableViewController.swift */,
+				A168B3BD22ACE29400340291 /* Local.swift */,
+				A168B3BF22ACEA6200340291 /* LocalViewController.swift */,
 			);
 			path = LocalCenter;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 				A1AE4D172292780900DDBAE6 /* Info.plist */,
 				A196348D229FC138000F8F31 /* MapViewController.swift */,
 				A1963495229FC3F9000F8F31 /* PlayFaclt.swift */,
+				A168B3BB22ACDEA800340291 /* searchfooter.swift */,
 			);
 			path = IOS_TermProject;
 			sourceTree = "<group>";
@@ -217,9 +226,12 @@
 				A1711D7E22A15EF7001B1723 /* LocalCenterTableViewController.swift in Sources */,
 				A1711D7C22A159FA001B1723 /* NursingFacltDetailTableViewController.swift in Sources */,
 				A196348E229FC138000F8F31 /* MapViewController.swift in Sources */,
+				A168B3BE22ACE29400340291 /* Local.swift in Sources */,
 				A1A73CC0229F9F930091AF51 /* PlayDetailTableViewController.swift in Sources */,
+				A168B3BC22ACDEA800340291 /* searchfooter.swift in Sources */,
 				A1AE4D0E2292780800DDBAE6 /* ViewController.swift in Sources */,
 				A1736A1E22A1174D00F6382D /* HouseDetailTableViewController.swift in Sources */,
+				A168B3C022ACEA6200340291 /* LocalViewController.swift in Sources */,
 				A168B3BA22ACBB4D00340291 /* NursingFacltMapViewController.swift in Sources */,
 				A1736A1222A113A800F6382D /* ChildrenHouseSearchViewController.swift in Sources */,
 				A1736A1622A114BC00F6382D /* LocalCenterSearchViewController.swift in Sources */,
