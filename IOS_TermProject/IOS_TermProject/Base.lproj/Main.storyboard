@@ -18,17 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ab-lx-4P0">
-                                <rect key="frame" x="16" y="133" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0nT-cQ-p3S">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="놀이터 이미지.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="v1S-Td-icq">
+                                <rect key="frame" x="0.0" y="39.5" width="375" height="603"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="603" id="pqY-ac-FkV"/>
+                                    <constraint firstAttribute="width" constant="375" id="yBr-19-B5g"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0nT-cQ-p3S">
                                 <rect key="frame" x="16" y="306" width="343" height="312"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="baN-dB-hKp"/>
+                                    <constraint firstAttribute="height" constant="312" id="p5q-sk-p9E"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="D5u-jd-Ytt" style="IBUITableViewCellStyleDefault" id="3Q6-EJ-iXN">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
@@ -54,8 +57,27 @@
                                     <outlet property="delegate" destination="zTu-pi-FzW" id="fNR-SB-MOm"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ab-lx-4P0">
+                                <rect key="frame" x="16" y="133" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="m2f-b9-Wpv"/>
+                                    <constraint firstAttribute="width" constant="343" id="vww-Zf-4xP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v1S-Td-icq" firstAttribute="centerY" secondItem="9Rz-pT-YAQ" secondAttribute="centerY" id="FK1-5b-AaC"/>
+                            <constraint firstItem="0nT-cQ-p3S" firstAttribute="centerX" secondItem="9Rz-pT-YAQ" secondAttribute="centerX" id="KMp-oa-rdw"/>
+                            <constraint firstItem="9Rz-pT-YAQ" firstAttribute="bottom" secondItem="0nT-cQ-p3S" secondAttribute="bottom" id="NgC-Bh-SVy"/>
+                            <constraint firstItem="0nT-cQ-p3S" firstAttribute="leading" secondItem="2ab-lx-4P0" secondAttribute="leading" id="fYj-Na-0GW"/>
+                            <constraint firstItem="v1S-Td-icq" firstAttribute="centerX" secondItem="9Rz-pT-YAQ" secondAttribute="centerX" id="szC-1C-96E"/>
+                            <constraint firstItem="2ab-lx-4P0" firstAttribute="top" secondItem="9Rz-pT-YAQ" secondAttribute="top" constant="69" id="xTT-dj-Itb"/>
+                            <constraint firstItem="2ab-lx-4P0" firstAttribute="centerX" secondItem="9Rz-pT-YAQ" secondAttribute="centerX" id="znx-Ed-sFY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9Rz-pT-YAQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="경기도 어린이 놀이시설" id="1g5-S4-7PK">
@@ -184,15 +206,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FH4-Ts-lCz">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FH4-Ts-lCz">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="71a-r0-0lb"/>
+                                    <constraint firstAttribute="height" constant="554" id="vAq-RK-aec"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="8Ix-lq-HUM" id="dPC-uf-csT"/>
                                 </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FH4-Ts-lCz" firstAttribute="centerY" secondItem="KKZ-2o-zrz" secondAttribute="centerY" id="kgb-W7-dOr"/>
+                            <constraint firstItem="FH4-Ts-lCz" firstAttribute="centerX" secondItem="KKZ-2o-zrz" secondAttribute="centerX" id="l37-32-hbY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KKZ-2o-zrz"/>
                     </view>
                     <connections>
@@ -251,12 +280,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KUN-Ef-2b7">
-                                <rect key="frame" x="0.0" y="225" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="어린이집 이미지.png" translatesAutoresizingMaskIntoConstraints="NO" id="zou-YD-owK">
+                                <rect key="frame" x="0.0" y="39.5" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Usk-SZ-2GZ"/>
+                                    <constraint firstAttribute="height" constant="603" id="pXA-y6-pAl"/>
+                                </constraints>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUN-Ef-2b7">
+                                <rect key="frame" x="0.0" y="233" width="375" height="216"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="hyn-Sm-x10"/>
+                                    <constraint firstAttribute="width" constant="375" id="yKE-a2-BYU"/>
+                                </constraints>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KUN-Ef-2b7" firstAttribute="centerY" secondItem="deK-gn-kCf" secondAttribute="centerY" id="1PH-pF-XbY"/>
+                            <constraint firstItem="KUN-Ef-2b7" firstAttribute="centerX" secondItem="deK-gn-kCf" secondAttribute="centerX" id="JKp-mB-NF9"/>
+                            <constraint firstItem="zou-YD-owK" firstAttribute="centerY" secondItem="deK-gn-kCf" secondAttribute="centerY" id="Lde-0E-VcZ"/>
+                            <constraint firstItem="zou-YD-owK" firstAttribute="centerX" secondItem="deK-gn-kCf" secondAttribute="centerX" id="m0c-nF-fgw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="deK-gn-kCf"/>
                     </view>
                     <navigationItem key="navigationItem" title="경기도 어린이집" id="Rcn-pV-ghd">
@@ -473,7 +520,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -488,6 +537,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="DetailTableView" destination="lXM-AJ-MJ4" id="WjI-c7-ZfT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jt9-lW-ipU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="bE9-qR-Odf" customClass="SearchFooter" customModule="IOS_TermProject" customModuleProvider="target">
@@ -510,15 +562,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0az-E6-Qua">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0az-E6-Qua">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="S0S-O8-HIj"/>
+                                    <constraint firstAttribute="height" constant="554" id="pSV-ma-gcV"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="8W5-1i-Yve" id="Bxb-G9-TE0"/>
                                 </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0az-E6-Qua" firstAttribute="centerY" secondItem="qyZ-Ng-1rA" secondAttribute="centerY" id="7uR-KB-NQA"/>
+                            <constraint firstItem="0az-E6-Qua" firstAttribute="centerX" secondItem="qyZ-Ng-1rA" secondAttribute="centerX" id="tEa-am-zlb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qyZ-Ng-1rA"/>
                     </view>
                     <navigationItem key="navigationItem" title="경기도 양육시설" id="JRe-SX-pg9"/>
@@ -595,17 +654,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-D4-biR" customClass="SearchFooter" customModule="IOS_TermProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="아동센터 이미지.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ej6-xL-Tse">
+                                <rect key="frame" x="0.0" y="7.5" width="375" height="667"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="irD-kZ-Dbc"/>
+                                    <constraint firstAttribute="width" constant="375" id="Jqy-11-mcA"/>
+                                    <constraint firstAttribute="height" constant="667" id="yqB-9u-DsX"/>
                                 </constraints>
-                            </view>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OaM-F4-dF5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="4CI-uP-OxJ" detailTextLabel="llF-3Q-VaN" style="IBUITableViewCellStyleSubtitle" id="e2O-6t-tXL">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -630,6 +693,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="oOR-bW-zaL" kind="show" identifier="segueToLocalDetail" id="Y5q-XE-boT"/>
                                         </connections>
@@ -640,10 +704,19 @@
                                     <outlet property="delegate" destination="jhx-rF-1r6" id="YK3-R9-DYq"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-D4-biR" customClass="SearchFooter" customModule="IOS_TermProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="irD-kZ-Dbc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="z1X-D4-biR" secondAttribute="trailing" id="18a-7i-UCb"/>
+                            <constraint firstItem="ej6-xL-Tse" firstAttribute="centerY" secondItem="w2A-8s-TgB" secondAttribute="centerY" id="ODa-Et-s0e"/>
+                            <constraint firstItem="ej6-xL-Tse" firstAttribute="centerX" secondItem="w2A-8s-TgB" secondAttribute="centerX" id="Olr-gP-VXv"/>
                             <constraint firstItem="z1X-D4-biR" firstAttribute="bottom" secondItem="w2A-8s-TgB" secondAttribute="bottom" id="VZj-xb-s6F"/>
                             <constraint firstItem="z1X-D4-biR" firstAttribute="leading" secondItem="afM-vw-ETk" secondAttribute="leading" id="lQx-Ut-zqL"/>
                         </constraints>
@@ -657,9 +730,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oyr-cc-URW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4065" y="2560"/>
+            <point key="canvasLocation" x="4064.8000000000002" y="2559.6701649175416"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="놀이터 이미지.jpg" width="630" height="444"/>
+        <image name="아동센터 이미지.jpg" width="630" height="470"/>
+        <image name="어린이집 이미지.png" width="306" height="177"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xPn-FO-Vxy"/>
     </inferredMetricsTieBreakers>

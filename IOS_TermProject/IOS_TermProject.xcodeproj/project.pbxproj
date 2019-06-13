@@ -21,6 +21,9 @@
 		A1736A1622A114BC00F6382D /* LocalCenterSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1736A1522A114BC00F6382D /* LocalCenterSearchViewController.swift */; };
 		A1736A1C22A1172A00F6382D /* HouseInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1736A1B22A1172A00F6382D /* HouseInfoTableViewController.swift */; };
 		A1736A1E22A1174D00F6382D /* HouseDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1736A1D22A1174D00F6382D /* HouseDetailTableViewController.swift */; };
+		A17B41A222B2362F006A6674 /* 어린이집 이미지.png in Resources */ = {isa = PBXBuildFile; fileRef = A17B41A122B2362F006A6674 /* 어린이집 이미지.png */; };
+		A17B41A422B236F2006A6674 /* 놀이터 이미지.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A17B41A322B236F2006A6674 /* 놀이터 이미지.jpg */; };
+		A17B41A622B23828006A6674 /* 아동센터 이미지.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A17B41A522B23828006A6674 /* 아동센터 이미지.jpg */; };
 		A196348E229FC138000F8F31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196348D229FC138000F8F31 /* MapViewController.swift */; };
 		A1963496229FC3F9000F8F31 /* PlayFaclt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1963495229FC3F9000F8F31 /* PlayFaclt.swift */; };
 		A1A73CBE229F9F620091AF51 /* PlayInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A73CBD229F9F620091AF51 /* PlayInfoTableViewController.swift */; };
@@ -47,6 +50,9 @@
 		A1736A1522A114BC00F6382D /* LocalCenterSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCenterSearchViewController.swift; sourceTree = "<group>"; };
 		A1736A1B22A1172A00F6382D /* HouseInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseInfoTableViewController.swift; sourceTree = "<group>"; };
 		A1736A1D22A1174D00F6382D /* HouseDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailTableViewController.swift; sourceTree = "<group>"; };
+		A17B41A122B2362F006A6674 /* 어린이집 이미지.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "어린이집 이미지.png"; path = "../../../../../../Downloads/어린이집 이미지.png"; sourceTree = "<group>"; };
+		A17B41A322B236F2006A6674 /* 놀이터 이미지.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "놀이터 이미지.jpg"; path = "../../../../../../Downloads/놀이터 이미지.jpg"; sourceTree = "<group>"; };
+		A17B41A522B23828006A6674 /* 아동센터 이미지.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "아동센터 이미지.jpg"; path = "../../../../../../Downloads/아동센터 이미지.jpg"; sourceTree = "<group>"; };
 		A196348D229FC138000F8F31 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A1963495229FC3F9000F8F31 /* PlayFaclt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayFaclt.swift; sourceTree = "<group>"; };
 		A1A73CBD229F9F620091AF51 /* PlayInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +120,16 @@
 			path = ChildrenHouse;
 			sourceTree = "<group>";
 		};
+		A17B41A022B23613006A6674 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A17B41A322B236F2006A6674 /* 놀이터 이미지.jpg */,
+				A17B41A122B2362F006A6674 /* 어린이집 이미지.png */,
+				A17B41A522B23828006A6674 /* 아동센터 이미지.jpg */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		A1AE4CFF2292780800DDBAE6 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +149,7 @@
 		A1AE4D0A2292780800DDBAE6 /* IOS_TermProject */ = {
 			isa = PBXGroup;
 			children = (
+				A17B41A022B23613006A6674 /* Image */,
 				A1736A1A22A115AC00F6382D /* ChildrenHouse */,
 				A1736A1922A115A400F6382D /* NursingFaclt */,
 				A1736A1822A1159900F6382D /* LocalCenter */,
@@ -208,8 +225,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17B41A422B236F2006A6674 /* 놀이터 이미지.jpg in Resources */,
 				A1AE4D162292780900DDBAE6 /* LaunchScreen.storyboard in Resources */,
 				A1AE4D132292780900DDBAE6 /* Assets.xcassets in Resources */,
+				A17B41A622B23828006A6674 /* 아동센터 이미지.jpg in Resources */,
+				A17B41A222B2362F006A6674 /* 어린이집 이미지.png in Resources */,
 				A1AE4D112292780800DDBAE6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
