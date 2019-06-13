@@ -32,6 +32,8 @@ class LocalViewController: UIViewController, UITableViewDataSource, UITableViewD
     var WELFARE_FACLT_TELNO = NSMutableString() // 전화번호
     var FACLT_PSN_CAPA = NSMutableString() // 정원수
     
+    var isparsing = false
+    
     // MARK: - View Setup
     func searchBarIsEmpty() -> Bool{
         return searchController.searchBar.text?.isEmpty ?? true
@@ -70,7 +72,10 @@ class LocalViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         tableView.tableFooterView = searchFooter
         
-        beginParsing()
+        if !isparsing {
+            beginParsing()
+            isparsing = true
+        }
         var count = 0
         for post in posts{
             let name = (post as AnyObject).value(forKey: "FACLT_NM") as! NSMutableString as String

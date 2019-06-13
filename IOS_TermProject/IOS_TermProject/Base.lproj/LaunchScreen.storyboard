@@ -18,21 +18,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srs-ZF-10v">
-                                <rect key="frame" x="166" y="323" width="38" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="시작화면 이미지.png" translatesAutoresizingMaskIntoConstraints="NO" id="2oP-yp-Zth">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="667" id="37f-LV-OuX"/>
+                                    <constraint firstAttribute="width" constant="375" id="LQc-zl-Zwz"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아동관련시설정보APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srs-ZF-10v">
+                                <rect key="frame" x="60" y="74" width="255" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="Cfr-84-c2E"/>
+                                    <constraint firstAttribute="height" constant="103" id="mtX-F1-pjn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="srs-ZF-10v" secondAttribute="bottom" constant="490" id="4cg-XF-gsw"/>
+                            <constraint firstItem="2oP-yp-Zth" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CM7-eD-0bd"/>
+                            <constraint firstItem="2oP-yp-Zth" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DZc-gi-ZKs"/>
+                            <constraint firstItem="srs-ZF-10v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VfI-yW-Yky"/>
+                            <constraint firstItem="srs-ZF-10v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="sU7-dU-d6a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="시작화면 이미지.png" width="473" height="395"/>
+    </resources>
 </document>

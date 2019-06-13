@@ -10,8 +10,6 @@ import UIKit
 
 class LocalCenterDetailTableViewController: UITableViewController {
     
-    @IBOutlet var DetailTableView: UITableView!
-    
     var FACLT_NM : String? //이름
     var REFINE_LOTNO_ADDR : String? // 주소
     var REFINE_WGS84_LOGT : String? //xpos
@@ -31,11 +29,8 @@ class LocalCenterDetailTableViewController: UITableViewController {
         posts[3] = FACLT_PSN_CAPA!
         posts[4] = REFINE_WGS84_LAT!
         posts[5] = REFINE_WGS84_LOGT!
-        
-        let backgroundimage = UIImage(named: "아동센터 이미지.png")
-        let imageView = UIImageView(image: backgroundimage)
-        
-        DetailTableView.backgroundView = imageView
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "아동센터 이미지.jpg")!)
+        self.tableView.backgroundView?.alpha = 0.5
     }
     
     
@@ -52,7 +47,7 @@ class LocalCenterDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = postsname[indexPath.row]
         cell.detailTextLabel?.text = posts[indexPath.row]
         return cell

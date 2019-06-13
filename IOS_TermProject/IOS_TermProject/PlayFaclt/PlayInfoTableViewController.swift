@@ -141,6 +141,7 @@ class PlayInfoTableViewController: UITableViewController, XMLParserDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "PLAY_FACLT_NM") as! NSString as String
         cell.detailTextLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "REFINE_LOTNO_ADDR") as! NSString as String
         return cell
@@ -150,6 +151,8 @@ class PlayInfoTableViewController: UITableViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "놀이터 이미지.jpg")!)
+        self.tableView.backgroundView?.alpha = 0.5
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

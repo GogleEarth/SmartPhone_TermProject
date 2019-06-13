@@ -37,6 +37,8 @@ class NursingFacltMapViewController: UIViewController, MKMapViewDelegate, XMLPar
     
     var selected_post = 0
     
+    var isparsing = false
+    
     func beginParsing()
     {
         posts = []
@@ -71,7 +73,10 @@ class NursingFacltMapViewController: UIViewController, MKMapViewDelegate, XMLPar
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        beginParsing()
+        if !isparsing{
+            beginParsing()
+            isparsing = true
+        }
         let initialLocation = CLLocation(latitude: 37.5497121628, longitude: 127.0786363076)
         centerMapOnLocation(location: initialLocation)
         MapView.delegate = self

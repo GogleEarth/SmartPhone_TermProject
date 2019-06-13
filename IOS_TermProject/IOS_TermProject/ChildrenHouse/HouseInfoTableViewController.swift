@@ -150,6 +150,7 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
         }
         cell.textLabel!.text = candy.name
         cell.detailTextLabel!.text = candy.addr
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     
@@ -165,6 +166,9 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
         searchController.searchBar.delegate = self
         
         PlayInfoTableView.tableFooterView = searchFooter
+        
+        PlayInfoTableView.backgroundView = UIImageView(image: UIImage(named: "어린이집 이미지.png")!)
+        PlayInfoTableView.backgroundView?.alpha = 0.5
         
         beginParsing()
         var count = 0

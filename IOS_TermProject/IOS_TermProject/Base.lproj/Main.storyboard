@@ -409,6 +409,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="34H-gM-pva" kind="show" identifier="segueToDetailHouseInfo" id="fOR-8b-9XB"/>
@@ -537,9 +538,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="DetailTableView" destination="lXM-AJ-MJ4" id="WjI-c7-ZfT"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jt9-lW-ipU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="bE9-qR-Odf" customClass="SearchFooter" customModule="IOS_TermProject" customModuleProvider="target">
@@ -629,6 +627,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

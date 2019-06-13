@@ -25,6 +25,9 @@ class HouseDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "어린이집 이미지.png")!)
+        self.tableView.backgroundView?.alpha = 0.5
+        
         posts[0] = KIDGARTN_NM!
         posts[1] = REFINE_LOTNO_ADDR!
         posts[2] = KIDGARTN_DIV_NM!
@@ -48,6 +51,7 @@ class HouseDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = postsname[indexPath.row]
         cell.detailTextLabel?.text = posts[indexPath.row]
         return cell
