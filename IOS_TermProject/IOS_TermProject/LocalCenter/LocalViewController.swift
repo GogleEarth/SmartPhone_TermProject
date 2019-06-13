@@ -61,7 +61,7 @@ class LocalViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Candies"
+        searchController.searchBar.placeholder = "Search Name"
         navigationItem.searchController = searchController
         definesPresentationContext = true
         

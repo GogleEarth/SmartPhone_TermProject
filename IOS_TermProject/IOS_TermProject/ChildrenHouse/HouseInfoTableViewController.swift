@@ -11,6 +11,7 @@ import UIKit
 class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
     var cityname : String?
     @IBOutlet var PlayInfoTableView: UITableView!
+    @IBOutlet var searchFooter: SearchFooter!
     
     var url : String?
     var parser = XMLParser()
@@ -28,6 +29,10 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
     
     var hospitalname = ""
     var hospitalname_utf8 = ""
+    
+    var filteredCandies = [Local]()
+    var candies = [Local]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     func beginParsing()
     {
@@ -125,23 +130,51 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return posts.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering(){
+            searchFooter.setIsFilteringToShow(filteredItemCount: filteredCandies.count, of: candies.count)
+            return filteredCandies.count
+        }
+        searchFooter.setNotFiltering()
+        return candies.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "KIDGARTN_NM") as! NSString as String
-        cell.detailTextLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "REFINE_LOTNO_ADDR") as! NSString as String
+        
+        let candy : Local
+        if isFiltering(){
+            candy = filteredCandies[indexPath.row]
+        } else {
+            candy = candies[indexPath.row]
+        }
+        cell.textLabel!.text = candy.name
+        cell.detailTextLabel!.text = candy.addr
         return cell
     }
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Name"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
+        //searchController.searchBar.scopeButtonTitles = ["All", "Chocolate", "Hard", "Other"]
+        searchController.searchBar.delegate = self
+        
+        PlayInfoTableView.tableFooterView = searchFooter
+        
         beginParsing()
+        var count = 0
+        for post in posts{
+            let name = (post as AnyObject).value(forKey: "KIDGARTN_NM") as! NSMutableString as String
+            let addr = (post as AnyObject).value(forKey: "REFINE_LOTNO_ADDR") as! NSMutableString as String
+            
+            candies.append(Local(name: name, addr: addr, index: count))
+            count = count + 1
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -153,18 +186,75 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
         {
             if let cell = sender as? UITableViewCell
             {
-                let indexPath = tableView.indexPath(for: cell)
+                var candy : Local?
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    if isFiltering(){
+                        candy = filteredCandies[indexPath.row]
+                    } else {
+                        candy = candies[indexPath.row]
+                    }
+                }
                 if let houseDetailTableViewController = segue.destination as? HouseDetailTableViewController
                 {
-                    houseDetailTableViewController.KIDGARTN_NM = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "KIDGARTN_NM") as! NSMutableString as String
-                    houseDetailTableViewController.REFINE_LOTNO_ADDR = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "REFINE_LOTNO_ADDR") as! NSMutableString as String
-                    houseDetailTableViewController.KIDGARTN_DIV_NM = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "KIDGARTN_DIV_NM") as! NSMutableString as String
-                    houseDetailTableViewController.REFINE_WGS84_LOGT = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSMutableString as String
-                    houseDetailTableViewController.REFINE_WGS84_LAT = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSMutableString as String
-                    houseDetailTableViewController.KIDGARTN_TELNO = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "KIDGARTN_TELNO") as! NSMutableString as String
-                    houseDetailTableViewController.PSN_CAPA_CNT = (posts.object(at: indexPath!.row) as AnyObject).value(forKey: "PSN_CAPA_CNT") as! NSMutableString as String
+                    houseDetailTableViewController.KIDGARTN_NM = (posts.object(at: candy!.index) as AnyObject).value(forKey: "KIDGARTN_NM") as! NSMutableString as String
+                    houseDetailTableViewController.REFINE_LOTNO_ADDR = (posts.object(at: candy!.index) as AnyObject).value(forKey: "REFINE_LOTNO_ADDR") as! NSMutableString as String
+                    houseDetailTableViewController.KIDGARTN_DIV_NM = (posts.object(at: candy!.index) as AnyObject).value(forKey: "KIDGARTN_DIV_NM") as! NSMutableString as String
+                    houseDetailTableViewController.REFINE_WGS84_LOGT = (posts.object(at: candy!.index) as AnyObject).value(forKey: "REFINE_WGS84_LOGT") as! NSMutableString as String
+                    houseDetailTableViewController.REFINE_WGS84_LAT = (posts.object(at: candy!.index) as AnyObject).value(forKey: "REFINE_WGS84_LAT") as! NSMutableString as String
+                    houseDetailTableViewController.KIDGARTN_TELNO = (posts.object(at: candy!.index) as AnyObject).value(forKey: "KIDGARTN_TELNO") as! NSMutableString as String
+                    houseDetailTableViewController.PSN_CAPA_CNT = (posts.object(at: candy!.index) as AnyObject).value(forKey: "PSN_CAPA_CNT") as! NSMutableString as String
                 }
             }
         }
+    }
+    
+    func searchBarIsEmpty() -> Bool{
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All"){
+        filteredCandies = candies.filter({(candy : Local) -> Bool in
+            let doesCategoryMatch = (scope == "All") || (candy.addr == scope)
+            
+            if searchBarIsEmpty(){
+                return doesCategoryMatch
+            } else {
+                return doesCategoryMatch && candy.name.lowercased().contains(searchText.lowercased())
+            }
+        })
+        
+        tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && !searchBarIsEmpty() || searchBarScopeIsFiltering
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //if splitViewController!.isCollapsed {
+        //    if let selectionIndexPath = self.tableView.indexPathForSelectedRow {
+        //        self.tableView.deselectRow(at: selectionIndexPath, animated: animated)
+        //    }
+        //}
+        super.viewWillAppear(animated)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
+
+extension HouseInfoTableViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        //let searchBar = searchController.searchBar
+        //let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
+
+extension HouseInfoTableViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
+        filterContentForSearchText(searchBar.text!)
     }
 }
