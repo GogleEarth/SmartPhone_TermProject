@@ -151,6 +151,9 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
         cell.textLabel!.text = candy.name
         cell.detailTextLabel!.text = candy.addr
         cell.backgroundColor = UIColor.clear
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.cyan.withAlphaComponent(0.35)
+        cell.selectedBackgroundView = bgColorView
         return cell
     }
     
@@ -169,6 +172,7 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
         
         PlayInfoTableView.backgroundView = UIImageView(image: UIImage(named: "어린이집 이미지.png")!)
         PlayInfoTableView.backgroundView?.alpha = 0.5
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         
         beginParsing()
         var count = 0
@@ -246,6 +250,42 @@ class HouseInfoTableViewController: UITableViewController, XMLParserDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let point = touch?.location(in: touch?.view)
+        let stars = StardustView(frame: CGRect(x: point!.x, y: point!.y, width: 2, height: 2))
+        self.view.addSubview(stars)
+        self.view.sendSubviewToBack(_: stars)
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .began{
+            print("began")
+        }
+        if sender.state == .ended{
+            print("ended")
+        }
+        if sender.state == .changed{
+            print("changed")
+        }
+        if sender.state == .cancelled{
+            print("cancelled")
+        }
+        if sender.state == .failed{
+            print("failed")
+        }
+        if sender.state == .possible{
+            print("possible")
+        }
+        if sender.state == .ended{
+            let point = sender.location(in: self.view)
+            let stars = StardustView(frame: CGRect(x: point.x, y: point.y, width: 2, height: 2))
+            self.view.addSubview(stars)
+            self.view.sendSubviewToBack(_: stars)
+        }
+        sender.cancelsTouchesInView = false
     }
 }
 

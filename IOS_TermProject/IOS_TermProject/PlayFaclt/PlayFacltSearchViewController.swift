@@ -19,6 +19,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.lastSearchTableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +33,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
+        print(segue.identifier)
         if segue.identifier == "segueToPlayInfoTableView"
         {
             if let navController = segue.destination as? UITableViewController
@@ -46,6 +48,23 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         }
+        if segue.identifier == "segueToPlayInfoTableViewFromTable"
+        {
+            if let navController = segue.destination as? UITableViewController
+            {
+                if let cell = sender as? UITableViewCell
+                {
+                    if let playinfoTableViewController = navController as? PlayInfoTableViewController
+                    {
+                        print(cell.textLabel?.text)
+                        playinfoTableViewController.cityname = cell.textLabel?.text
+                        let sigunname = cell.textLabel?.text
+                        let sigunname_utf8 = sigunname!.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+                        playinfoTableViewController.url = myurl + sigunname_utf8
+                    }
+                }
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -57,8 +76,39 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = SearchLast[indexPath.row]
-        
+        cell.backgroundColor = UIColor.clear
+        var bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.cyan.withAlphaComponent(0.2)
+        cell.selectedBackgroundView = bgColorView
         return cell
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .began{
+            print("began")
+        }
+        if sender.state == .ended{
+            print("ended")
+        }
+        if sender.state == .changed{
+            print("changed")
+        }
+        if sender.state == .cancelled{
+            print("cancelled")
+        }
+        if sender.state == .failed{
+            print("failed")
+        }
+        if sender.state == .possible{
+            print("possible")
+        }
+        if sender.state == .ended{
+            let point = sender.location(in: self.view)
+            let stars = StardustView(frame: CGRect(x: point.x, y: point.y, width: 2, height: 2))
+            self.view.addSubview(stars)
+            self.view.sendSubviewToBack(_: stars)
+        }
+        sender.cancelsTouchesInView = false
     }
 
 }

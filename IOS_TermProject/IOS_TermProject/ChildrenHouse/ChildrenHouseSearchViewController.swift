@@ -58,5 +58,13 @@ class ChildrenHouseSearchViewController: UIViewController, UIPickerViewDelegate,
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         cityName = pickerDataSource[row]
     }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        let point = touch?.location(in: touch?.view)
+        let stars = StardustView(frame: CGRect(x: point!.x, y: point!.y, width: 2, height: 2))
+        self.view.addSubview(stars)
+        self.view.sendSubviewToBack(_: stars)
+    }
 
 }

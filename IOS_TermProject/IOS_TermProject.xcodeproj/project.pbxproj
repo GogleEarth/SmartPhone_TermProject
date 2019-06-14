@@ -26,6 +26,8 @@
 		A184EA1E22B2B1A30023883F /* 놀이터 이미지.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A184EA1B22B2B1A30023883F /* 놀이터 이미지.jpg */; };
 		A184EA2022B2B8010023883F /* 보육원 이미지.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A184EA1F22B2B8010023883F /* 보육원 이미지.jpg */; };
 		A184EA2222B2B9720023883F /* 시작화면 이미지.png in Resources */ = {isa = PBXBuildFile; fileRef = A184EA2122B2B9720023883F /* 시작화면 이미지.png */; };
+		A184EA2422B2BC030023883F /* StardustView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A184EA2322B2BC030023883F /* StardustView.swift */; };
+		A184EA2622B2BC130023883F /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = A184EA2522B2BC130023883F /* particle.png */; };
 		A196348E229FC138000F8F31 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196348D229FC138000F8F31 /* MapViewController.swift */; };
 		A1963496229FC3F9000F8F31 /* PlayFaclt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1963495229FC3F9000F8F31 /* PlayFaclt.swift */; };
 		A1A73CBE229F9F620091AF51 /* PlayInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A73CBD229F9F620091AF51 /* PlayInfoTableViewController.swift */; };
@@ -57,6 +59,8 @@
 		A184EA1B22B2B1A30023883F /* 놀이터 이미지.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "놀이터 이미지.jpg"; sourceTree = "<group>"; };
 		A184EA1F22B2B8010023883F /* 보육원 이미지.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "보육원 이미지.jpg"; sourceTree = "<group>"; };
 		A184EA2122B2B9720023883F /* 시작화면 이미지.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "시작화면 이미지.png"; sourceTree = "<group>"; };
+		A184EA2322B2BC030023883F /* StardustView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StardustView.swift; sourceTree = "<group>"; };
+		A184EA2522B2BC130023883F /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
 		A196348D229FC138000F8F31 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A1963495229FC3F9000F8F31 /* PlayFaclt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayFaclt.swift; sourceTree = "<group>"; };
 		A1A73CBD229F9F620091AF51 /* PlayInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				A184EA1A22B2B1A30023883F /* 어린이집 이미지.png */,
 				A184EA1F22B2B8010023883F /* 보육원 이미지.jpg */,
 				A184EA2122B2B9720023883F /* 시작화면 이미지.png */,
+				A184EA2522B2BC130023883F /* particle.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				A1AE4D0B2292780800DDBAE6 /* AppDelegate.swift */,
 				A1AE4D0D2292780800DDBAE6 /* ViewController.swift */,
 				A1AE4D0F2292780800DDBAE6 /* Main.storyboard */,
+				A184EA2322B2BC030023883F /* StardustView.swift */,
 				A1AE4D122292780900DDBAE6 /* Assets.xcassets */,
 				A1AE4D142292780900DDBAE6 /* LaunchScreen.storyboard */,
 				A1AE4D172292780900DDBAE6 /* Info.plist */,
@@ -236,6 +242,7 @@
 				A184EA2022B2B8010023883F /* 보육원 이미지.jpg in Resources */,
 				A184EA2222B2B9720023883F /* 시작화면 이미지.png in Resources */,
 				A184EA1D22B2B1A30023883F /* 어린이집 이미지.png in Resources */,
+				A184EA2622B2BC130023883F /* particle.png in Resources */,
 				A1AE4D112292780800DDBAE6 /* Main.storyboard in Resources */,
 				A184EA1E22B2B1A30023883F /* 놀이터 이미지.jpg in Resources */,
 				A184EA1C22B2B1A30023883F /* 아동센터 이미지.jpg in Resources */,
@@ -257,6 +264,7 @@
 				A168B3BE22ACE29400340291 /* Local.swift in Sources */,
 				A1A73CC0229F9F930091AF51 /* PlayDetailTableViewController.swift in Sources */,
 				A168B3BC22ACDEA800340291 /* searchfooter.swift in Sources */,
+				A184EA2422B2BC030023883F /* StardustView.swift in Sources */,
 				A1AE4D0E2292780800DDBAE6 /* ViewController.swift in Sources */,
 				A1736A1E22A1174D00F6382D /* HouseDetailTableViewController.swift in Sources */,
 				A168B3C022ACEA6200340291 /* LocalViewController.swift in Sources */,

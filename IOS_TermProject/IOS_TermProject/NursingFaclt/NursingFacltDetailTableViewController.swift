@@ -30,6 +30,7 @@ class NursingFacltDetailTableViewController: UITableViewController {
         
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "보육원 이미지.jpg")!)
         self.tableView.backgroundView?.alpha = 0.5
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         
         posts[0] = FACLT_NM!
         posts[1] = REFINE_LOTNO_ADDR!
@@ -59,6 +60,9 @@ class NursingFacltDetailTableViewController: UITableViewController {
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = postsname[indexPath.row]
         cell.detailTextLabel?.text = posts[indexPath.row]
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.cyan.withAlphaComponent(0.35)
+        cell.selectedBackgroundView = bgColorView
         return cell
     }
     
@@ -76,6 +80,34 @@ class NursingFacltDetailTableViewController: UITableViewController {
     }
     
     @IBAction func back_button_action(_ sender: Any) {
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .began{
+            print("began")
+        }
+        if sender.state == .ended{
+            print("ended")
+        }
+        if sender.state == .changed{
+            print("changed")
+        }
+        if sender.state == .cancelled{
+            print("cancelled")
+        }
+        if sender.state == .failed{
+            print("failed")
+        }
+        if sender.state == .possible{
+            print("possible")
+        }
+        if sender.state == .ended{
+            let point = sender.location(in: self.view)
+            let stars = StardustView(frame: CGRect(x: point.x, y: point.y, width: 2, height: 2))
+            self.view.addSubview(stars)
+            self.view.sendSubviewToBack(_: stars)
+        }
+        sender.cancelsTouchesInView = false
     }
     
 }

@@ -127,6 +127,9 @@ class LocalCenterTableViewController: UITableViewController, XMLParserDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "FACLT_NM") as! NSString as String
         cell.detailTextLabel?.text = (posts.object(at: indexPath.row) as AnyObject).value(forKey: "REFINE_LOTNO_ADDR") as! NSString as String
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.cyan.withAlphaComponent(0.35)
+        cell.selectedBackgroundView = bgColorView
         return cell
     }
     
@@ -134,6 +137,7 @@ class LocalCenterTableViewController: UITableViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         beginParsing()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -170,9 +174,35 @@ class LocalCenterTableViewController: UITableViewController, XMLParserDelegate {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        
-        
         PlayInfoTableView.reloadData()
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .began{
+            print("began")
+        }
+        if sender.state == .ended{
+            print("ended")
+        }
+        if sender.state == .changed{
+            print("changed")
+        }
+        if sender.state == .cancelled{
+            print("cancelled")
+        }
+        if sender.state == .failed{
+            print("failed")
+        }
+        if sender.state == .possible{
+            print("possible")
+        }
+        if sender.state == .ended{
+            let point = sender.location(in: self.view)
+            let stars = StardustView(frame: CGRect(x: point.x, y: point.y, width: 2, height: 2))
+            self.view.addSubview(stars)
+            self.view.sendSubviewToBack(_: stars)
+        }
+        sender.cancelsTouchesInView = false
     }
 }
 

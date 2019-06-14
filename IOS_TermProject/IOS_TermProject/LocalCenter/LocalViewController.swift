@@ -71,6 +71,7 @@ class LocalViewController: UIViewController, UITableViewDataSource, UITableViewD
         searchController.searchBar.delegate = self
         
         tableView.tableFooterView = searchFooter
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         
         if !isparsing {
             beginParsing()
@@ -129,6 +130,9 @@ class LocalViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         cell.textLabel!.text = candy.name
         cell.detailTextLabel!.text = candy.addr
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.cyan.withAlphaComponent(0.35)
+        cell.selectedBackgroundView = bgColorView
         return cell
     }
     
@@ -245,6 +249,34 @@ class LocalViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             posts.add(elements)
         }
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .began{
+            print("began")
+        }
+        if sender.state == .ended{
+            print("ended")
+        }
+        if sender.state == .changed{
+            print("changed")
+        }
+        if sender.state == .cancelled{
+            print("cancelled")
+        }
+        if sender.state == .failed{
+            print("failed")
+        }
+        if sender.state == .possible{
+            print("possible")
+        }
+        if sender.state == .ended{
+            let point = sender.location(in: self.view)
+            let stars = StardustView(frame: CGRect(x: point.x, y: point.y, width: 2, height: 2))
+            self.view.addSubview(stars)
+            self.view.sendSubviewToBack(_: stars)
+        }
+        sender.cancelsTouchesInView = false
     }
 }
 

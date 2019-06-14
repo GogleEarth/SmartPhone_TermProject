@@ -187,4 +187,5 @@ class NursingFacltTableViewController: UITableViewController, XMLParserDelegate 
             }
         }
     }
+    
 }
