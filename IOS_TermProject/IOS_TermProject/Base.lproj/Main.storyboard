@@ -35,15 +35,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vI-Zk-Ove">
-                                <rect key="frame" x="0.0" y="272" width="375" height="346"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vI-Zk-Ove" customClass="BoderLineView" customModule="IOS_TermProject" customModuleProvider="target">
+                                <rect key="frame" x="16" y="282" width="343" height="316"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0nT-cQ-p3S">
-                                        <rect key="frame" x="16" y="17" width="343" height="312"/>
+                                        <rect key="frame" x="0.0" y="2" width="343" height="312"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="343" id="45m-hY-CqO"/>
-                                            <constraint firstAttribute="height" constant="312" id="SXL-Ia-Dzw"/>
+                                            <constraint firstAttribute="height" constant="312" id="4mq-yK-8xX"/>
+                                            <constraint firstAttribute="width" constant="343" id="Ed1-6v-ztR"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="D5u-jd-Ytt" style="IBUITableViewCellStyleDefault" id="3Q6-EJ-iXN">
@@ -76,19 +76,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="0nT-cQ-p3S" firstAttribute="centerY" secondItem="2vI-Zk-Ove" secondAttribute="centerY" id="K0f-Gl-SmI"/>
-                                    <constraint firstAttribute="width" constant="375" id="TrT-yi-8hf"/>
-                                    <constraint firstAttribute="height" constant="346" id="luM-cg-E00"/>
-                                    <constraint firstItem="0nT-cQ-p3S" firstAttribute="centerX" secondItem="2vI-Zk-Ove" secondAttribute="centerX" id="oO6-s9-lUF"/>
+                                    <constraint firstItem="0nT-cQ-p3S" firstAttribute="centerX" secondItem="2vI-Zk-Ove" secondAttribute="centerX" id="aKp-8m-Ora"/>
+                                    <constraint firstAttribute="width" constant="343" id="i7B-gz-2Yh"/>
+                                    <constraint firstItem="0nT-cQ-p3S" firstAttribute="centerY" secondItem="2vI-Zk-Ove" secondAttribute="centerY" id="oSM-AK-wVr"/>
+                                    <constraint firstAttribute="height" constant="316" id="yxQ-Fg-bOf"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2vI-Zk-Ove" firstAttribute="centerX" secondItem="9Rz-pT-YAQ" secondAttribute="centerX" id="9QT-X8-5R5"/>
                             <constraint firstItem="v1S-Td-icq" firstAttribute="centerY" secondItem="9Rz-pT-YAQ" secondAttribute="centerY" id="FK1-5b-AaC"/>
-                            <constraint firstItem="2vI-Zk-Ove" firstAttribute="top" secondItem="9Rz-pT-YAQ" secondAttribute="top" constant="208" id="MVt-jY-S2p"/>
+                            <constraint firstItem="9Rz-pT-YAQ" firstAttribute="bottom" secondItem="2vI-Zk-Ove" secondAttribute="bottom" constant="20" id="Zwb-TY-lqp"/>
                             <constraint firstItem="v1S-Td-icq" firstAttribute="centerX" secondItem="9Rz-pT-YAQ" secondAttribute="centerX" id="szC-1C-96E"/>
-                            <constraint firstItem="2vI-Zk-Ove" firstAttribute="centerX" secondItem="9Rz-pT-YAQ" secondAttribute="centerX" id="tV9-Yl-ydl"/>
                             <constraint firstItem="2ab-lx-4P0" firstAttribute="top" secondItem="9Rz-pT-YAQ" secondAttribute="top" constant="69" id="xTT-dj-Itb"/>
                             <constraint firstItem="2ab-lx-4P0" firstAttribute="centerX" secondItem="9Rz-pT-YAQ" secondAttribute="centerX" id="znx-Ed-sFY"/>
                         </constraints>
@@ -302,20 +302,32 @@
                                     <constraint firstAttribute="height" constant="603" id="pXA-y6-pAl"/>
                                 </constraints>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUN-Ef-2b7">
-                                <rect key="frame" x="77.5" y="233" width="220" height="216"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZ7-kX-axI" customClass="BoderLineView" customModule="IOS_TermProject" customModuleProvider="target">
+                                <rect key="frame" x="71.5" y="259.5" width="232" height="163"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUN-Ef-2b7">
+                                        <rect key="frame" x="0.0" y="-12" width="232" height="187"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="187" id="DbL-D1-lIv"/>
+                                            <constraint firstAttribute="width" constant="232" id="Yr2-IM-bBK"/>
+                                        </constraints>
+                                    </pickerView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="2A5-Bb-y8h"/>
-                                    <constraint firstAttribute="width" constant="220" id="Smg-ws-lrz"/>
+                                    <constraint firstAttribute="height" constant="163" id="REX-Vt-TpJ"/>
+                                    <constraint firstAttribute="width" constant="232" id="XyZ-h1-Zut"/>
+                                    <constraint firstItem="KUN-Ef-2b7" firstAttribute="centerX" secondItem="kZ7-kX-axI" secondAttribute="centerX" id="Ygc-kB-sGA"/>
+                                    <constraint firstItem="KUN-Ef-2b7" firstAttribute="centerY" secondItem="kZ7-kX-axI" secondAttribute="centerY" id="veD-Vb-jd9"/>
                                 </constraints>
-                            </pickerView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KUN-Ef-2b7" firstAttribute="centerX" secondItem="deK-gn-kCf" secondAttribute="centerX" id="2lb-9m-do6"/>
+                            <constraint firstItem="kZ7-kX-axI" firstAttribute="centerY" secondItem="deK-gn-kCf" secondAttribute="centerY" id="5pq-Nf-iiP"/>
                             <constraint firstItem="zou-YD-owK" firstAttribute="centerY" secondItem="deK-gn-kCf" secondAttribute="centerY" id="Lde-0E-VcZ"/>
-                            <constraint firstItem="KUN-Ef-2b7" firstAttribute="centerY" secondItem="deK-gn-kCf" secondAttribute="centerY" id="Zkz-ba-827"/>
+                            <constraint firstItem="kZ7-kX-axI" firstAttribute="centerX" secondItem="deK-gn-kCf" secondAttribute="centerX" id="iom-52-eAB"/>
                             <constraint firstItem="zou-YD-owK" firstAttribute="centerX" secondItem="deK-gn-kCf" secondAttribute="centerX" id="m0c-nF-fgw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="deK-gn-kCf"/>
